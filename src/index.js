@@ -21,6 +21,7 @@ class SearchWidget extends Component {
 		this.getResults( this.props.initialValue );
 	}
 	getResults( query ) {
+		// TODO: all of this! These are mock results to demo the as-you-type nature of the component.
 		if ( query ) {
 			const results = [];
 			const numResults = Math.floor( Math.random() * (5 - 0 + 1) + 0 );
@@ -38,6 +39,7 @@ class SearchWidget extends Component {
 		this.getResults( query );
 	}
 	componentDidMount() {
+		// TODO: only set focus if the search had focus before (needs a new prop to indicate if we should take focus)
 		this.input.focus();
 	}
 	render() {
