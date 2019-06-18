@@ -28,7 +28,7 @@ class SearchWidget extends Component {
 					} )
 					.then( ( json ) => {
 						if ( this.requestId === requestId ) {
-								this.setState( { ...json } );
+								this.setState( { results: json } );
 							}
 						}
 					);
@@ -55,7 +55,7 @@ class SearchWidget extends Component {
 				
 				<p><input type="text" value={ query } onInput={ this.onChangeQuery } ref={ input => this.input = input } /></p>
 				<Portal into="#results">
-					<SearchResults results={ results } query={ query } />
+					<SearchResults query={ query } { ...results } />
 				</Portal>
 			</div>
 		);
