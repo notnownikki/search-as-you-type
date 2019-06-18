@@ -22,7 +22,7 @@ class SearchWidget extends Component {
 			if ( api ) {
 				this.requestId++;
 				const requestId = this.requestId;
-				api( query )
+				api.fetch( query )
 					.then( ( response ) => {
 						return response.json();
 					} )
@@ -49,13 +49,13 @@ class SearchWidget extends Component {
 	}
 	render() {
 		const { query, results } = this.state;
-		const { SearchResults } = this.props;
+		const { SearchResults, api } = this.props;
 		return (
 			<div>
 				
 				<p><input type="text" value={ query } onInput={ this.onChangeQuery } ref={ input => this.input = input } /></p>
 				<Portal into="#results">
-					<SearchResults query={ query } { ...results } />
+					<SearchResults api={ api } query={ query } { ...results } />
 				</Portal>
 			</div>
 		);

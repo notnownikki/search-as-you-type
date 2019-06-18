@@ -1,9 +1,11 @@
 /** @jsx h */
 
-import api from '../components/api';
+import JetpackSearchAPI from '../components/api';
 import SearchResults from '../components/search-results';
 import SearchWidget from '../components/search-widget';
 import { h, render } from 'preact';
+
+const api = new JetpackSearchAPI();
 
 const injectSearchWidget = ( initialValue, target, grabFocus ) => {
 	render(
