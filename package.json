@@ -2,10 +2,11 @@
   "name": "search",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "search/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --mode production"
+    "build": "webpack --mode production",
+    "dev": "webpack --mode development --watch"
   },
   "keywords": [],
   "author": "",
@@ -21,6 +22,8 @@
     "webpack-cli": "^3.3.2"
   },
   "dependencies": {
-    "preact": "^8.4.2"
+    "lodash": "^4.17.11",
+    "preact": "^8.4.2",
+    "preact-portal": "^1.1.3"
   }
 }

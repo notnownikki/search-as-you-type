@@ -1,19 +1,19 @@
 <html>
 <head>
 	<script src="dist/main.js"></script>
-	<script>
-		function doInject() {
-			var target = document.getElementById('app');
-			var value = document.getElementById('input').value;
-			injectSearchWidget( value, target );
-
-		}
-		setTimeout( doInject, 7500 );
-	</script>
 </head>
 <body>
 	<div id="app">
 		<input id="input" />
 	</div>
+	<div id="results" />
+	<script>
+		function doInject() {
+			var target = document.getElementById('app');
+			var value = document.getElementById('input').value;
+			injectSearchWidget( value, target, document.getElementById('input') === document.activeElement );
+		}
+		doInject();
+	</script>
 </body>
 </html>
